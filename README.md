@@ -58,13 +58,12 @@ The bot will start, and you’ll see:
 
 📁 Folder Structure
 
-.
-├── downloads/         # Temporary audio files
-├── ffmpeg.exe         # ffmpeg binary
-├── yt-dlp.exe         # yt-dlp binary
-├── index.js           # Main bot code
-├── package.json
-└── README.md
+├── downloads/         # Temporary audio files <br>
+├── ffmpeg.exe         # ffmpeg binary  <br>
+├── yt-dlp.exe         # yt-dlp binary  <br>
+├── index.js           # Main bot code  <br>
+├── package.json  <br>
+└── README.md  <br>
 
 ---
 
