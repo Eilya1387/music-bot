@@ -141,3 +141,6 @@ process.once("SIGTERM", () => {
   console.log("🛑 SIGTERM received. Shutting down bot...");
   bot.stop("SIGTERM");
 });
+
+
+// developed by Eilya
