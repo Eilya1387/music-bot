@@ -1,11 +1,12 @@
 const { Telegraf } = require("telegraf");
+require("dotenv").config();
 const ytSearch = require("yt-search");
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
 const { exec } = require("child_process");
 const unlink = util.promisify(fs.unlink);
-const bot = new Telegraf("7761387379:AAF9OX8lS0jiu_ckvEGY2VyqXdow7ac01MQ");
+const bot = new Telegraf(process.env.TOKEN_BOT);
 const FFMPEG_PATH = path.join(__dirname, "ffmpeg.exe");
 
 const downloadsDir = path.join(__dirname, "downloads");
