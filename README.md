@@ -27,8 +27,8 @@ This bot uses:
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/Eilya1387/music-finder-bot.git
-cd music-finder-bot
+git clone https://github.com/Eilya1387/music-bot.git
+cd music-bot
 ```
 2. Install dependencies
 ```bash
