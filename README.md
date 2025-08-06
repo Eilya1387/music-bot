@@ -1,83 +1,89 @@
-🎵 Telegram Music Downloader Bot
-A Telegram bot that lets users send the name of a song, and it will search YouTube, download the best quality audio, convert it to MP3 using ffmpeg, and send it back to the user.
+# 🎵 Telegram Music Finder Bot
 
-🚀 Features
-Accepts song names (text messages)
+A powerful Telegram bot that lets users **search and download songs** by sending:
+- A **song name** as text
+- A **voice message** (part of the song)
+- A **video** or **audio file** (containing the music)
 
-Searches YouTube using yt-search
-
-Downloads the best audio stream with yt-dlp
-
-Converts audio to .mp3 using ffmpeg
-
-Sends the MP3 file back to the user
-
-Ignores links (to prevent spam)
-
-Basic anti-spam: prevents multiple requests per user at the same time
-
-🧰 Requirements
-Node.js (v14 or higher)
-
-ffmpeg (included as ffmpeg.exe in this project)
-
-yt-dlp (yt-dlp.exe should be available in the root directory)
-
-A Telegram bot token from @BotFather
+This bot uses:
+- `yt-search` + `yt-dlp` + `ffmpeg` to fetch and convert YouTube music
+- `ACRCloud` to identify songs in audio/video files or voice messages
 
 ---
-  
-📦 Installation
 
-git clone https://github.com/Eilya1387/telegram-music-bot.git
-cd telegram-music-bot
+## 📦 Features
+
+✅ Search for songs by name  
+✅ Recognize and download songs from voice messages  
+✅ Recognize and download songs from audio/video clips  
+✅ Supports Persian, English, and many more languages  
+✅ Automatic file cleanup  
+✅ Friendly feedback & error messages
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the project
+
+```bash
+git clone https://github.com/Eilya1387/music-finder-bot.git
+cd music-finder-bot
+```
+2. Install dependencies
+```bash
 npm install
+```
+---
+
+3. Setup .env
+Create a .env file in the root folder and add:
+
+TOKEN_BOT=your_telegram_bot_token
+ACR_ACCESS_KEY=your_acrcloud_access_key
+ACR_ACCESS_SECRET=your_acrcloud_access_secret
+ACR_HOST=your_acrcloud_host
+
+You can get ACRCloud credentials from:
+```bash
+👉 https://www.acrcloud.com
+```
+---
+
+📁 Project Structure
+
+├── downloads/         # Temporary audio files <br/>
+├── ffmpeg.exe         # FFmpeg binary (Windows only) <br/>
+├── yt-dlp.exe         # yt-dlp binary (Windows only) <br/>
+├── index.js           # Main bot logic <br/>
+├── .env               # Environment variables  <br/>
+├── .gitignore         # Ignore node_modules & .env <br/>
+├── package.json <br/>
+└── README.md <br/>
 
 ---
 
-🛠 Configuration
-Place your ffmpeg.exe file in the project root or a known directory.
+🧠 How It Works
 
-Download the latest yt-dlp.exe and place it in the project root.
+Text → Searches YouTube for the song title
 
-Replace the bot token in index.js:
+Voice / Audio / Video → Uses ACRCloud to recognize the song fingerprint
 
-const bot = new Telegraf("YOUR_BOT_TOKEN_HERE");
+Downloads and converts audio to mp3
 
----
-▶️ Run the bot
-node index.js
+Sends the audio file back to the user
 
 ---
 
-The bot will start, and you’ll see:
+🛠 Requirements
+Node.js v18+
 
-🤖 Bot started
+FFmpeg
 
----
+yt-dlp
 
-📁 Folder Structure
-
-├── downloads/         # Temporary audio files <br>
-├── ffmpeg.exe         # ffmpeg binary  <br>
-├── yt-dlp.exe         # yt-dlp binary  <br>
-├── index.js           # Main bot code  <br>
-├── package.json  <br>
-└── README.md  <br>
+ACRCloud account
 
 ---
-
-📸 Example Usage
-User sends: Shape of You
-
-Bot replies: “Searching...”
-
-Bot sends: 🎵 Shape of You.mp3
-
-⚠️ Notes
-Only text messages are supported.
-
-YouTube links will be ignored (only song names are allowed).
-
-Each user can only process one request at a time.
+👨‍💻 Developed by Eilya
 
