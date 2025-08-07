@@ -9,7 +9,7 @@ const fetch = require("node-fetch"); // package baraye ferestadan request HTTP
 const ACRCloud = require("acrcloud"); // import kardan SDK ACRCloud baraye shenasaei file haye audio
 const unlink = util.promisify(fs.unlink); // tabdil fs.unlink be promise baraye estefade ba async/await
 const bot = new Telegraf(process.env.TOKEN_BOT); //inam ke midooni
-const FFMPEG_PATH = path.join(__dirname, "ffmpeg.exe"); // moshakhas kardan path file ffmpeg.exe ke dar hamin directory gharar dare
+const FFMPEG_PATH = path.join(__dirname, "ffmpeg");
 
 // ACRCloud setup
 const acr = new ACRCloud({
@@ -146,7 +146,11 @@ async function handleAudioDownload(ctx, query, messageId, userId) {
     console.log("✅ downloading & convert to MP3");
 
     // agar platform windows bashe az 'yt-dlp.exe' estefade mikone, dar gheire in soorat 'yt-dlp'
-    const ytdlp = process.platform === "win32" ? "yt-dlp.exe" : "yt-dlp";
+    const ytdlp = path.resolve(
+      __dirname,
+      process.platform === "win32" ? "yt-dlp.exe" : "yt-dlp"
+    );
+
     // command baraye download kardan behtarin audio az youtube va tabdil be mp3 ba estefade az ffmpeg
     // --ffmpeg-location: masir ffmpeg ro moshakhas mikone
     // -f bestaudio: behtarin quality audio ro migire
