@@ -39,10 +39,10 @@ npm install
 3. Setup .env
 Create a .env file in the root folder and add:
 
-TOKEN_BOT=your_telegram_bot_token
-ACR_ACCESS_KEY=your_acrcloud_access_key
-ACR_ACCESS_SECRET=your_acrcloud_access_secret
-ACR_HOST=your_acrcloud_host
+TOKEN_BOT=your_telegram_bot_token <br/>
+ACR_ACCESS_KEY=your_acrcloud_access_key <br/>
+ACR_ACCESS_SECRET=your_acrcloud_access_secret <br/>
+ACR_HOST=your_acrcloud_host <br/>
 
 You can get ACRCloud credentials from:
 ```bash
